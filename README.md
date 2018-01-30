@@ -4,7 +4,6 @@ Small flexbox layout system that keeps structure away from styles.
 Instead of populating class attribute the following data-attributes are used:  
 `data-container`, `data-grid`, `data-cell`, `data-offset`, `data-order`, `data-align`, `data-visibility`
 
- 	
 Like this:
 ~~~~
 <div data-container>
@@ -16,6 +15,10 @@ Like this:
 </div>
 ~~~~
 This way you can keep your code more readable and use class attribute just for styling things.
+
+## Documentation
+
+For full documentation, visit [butelayout.github.io](https://butelayout.github.io/).
 
 ## Install
 
