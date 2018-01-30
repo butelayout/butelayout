@@ -1,0 +1,51 @@
+// Hide
+@media (max-width: map-get($breakpoints, sm)) {
+  [data-visibility*='xs-hide'] {
+    display: none !important;
+  }
+}
+
+@media (min-width: map-get($breakpoints, sm)) and (max-width: map-get($breakpoints, md)) {
+  [data-visibility*='sm-hide'] {
+    display: none !important;
+  }
+}
+
+@media (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints, lg)) {
+  [data-visibility*='md-hide'] {
+    display: none !important;
+  }
+}
+
+@media (min-width: map-get($breakpoints, lg)) {
+  [data-visibility*='lg-hide'] {
+    display: none !important;
+  }
+}
+
+// Show
+@media (min-width: map-get($breakpoints, sm)) {
+  [data-visibility*='xs-show'] {
+    display: none !important;
+  }
+}
+
+@media (max-width: map-get($breakpoints, sm)),
+(min-width: map-get($breakpoints, md)) {
+  [data-visibility*='sm-show'] {
+    display: none !important;
+  }
+}
+
+@media (max-width: map-get($breakpoints, md)),
+(min-width: map-get($breakpoints, lg)) {
+  [data-visibility*='md-show'] {
+    display: none !important;
+  }
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+  [data-visibility*='lg-show'] {
+    display: none !important;
+  }
+}

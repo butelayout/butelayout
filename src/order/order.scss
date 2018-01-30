@@ -1,0 +1,33 @@
+// Basic ordering
+@for $i from 1 through $cell-count {
+  [data-order*='xs-#{$i}'] {
+    order: $i;
+  }
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-order*='#{$slug}-#{$i}'] {
+        order: $i;
+      }
+    }
+  }
+}
+
+// First
+[data-order*='xs-first'] {
+  order: -1;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-order*='#{$slug}-first'] {
+        order: -1;
+      }
+    }
+  }
+}

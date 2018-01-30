@@ -1,0 +1,30 @@
+// Reverse grid
+[data-grid][data-order*='xs-reverse'] {
+  flex-direction: row-reverse;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-grid][data-order*='#{$slug}-reverse'] {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+// Reverse columns grid
+[data-grid*='columns'][data-order*='xs-reverse'] {
+  flex-direction: column-reverse;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-grid*='columns'][data-order*='#{$slug}-reverse'] {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}

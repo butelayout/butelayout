@@ -1,0 +1,74 @@
+[data-cell] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: map-get($gutter, value);
+  padding-left: map-get($gutter, value);
+  @media (max-width: map-get($breakpoints, sm)) {
+    padding-right: map-get($gutter, min);
+    padding-left: map-get($gutter, min);
+  }
+  @media (min-width: map-get($breakpoints, lg)) {
+    padding-right: map-get($gutter, max);
+    padding-left: map-get($gutter, max);
+  }
+}
+
+// Basic cells
+@for $i from 1 through $cell-count {
+  [data-cell*='xs-#{$i}'] {
+    width: percentage( $i / $cell-count);
+  }
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-cell*='#{$slug}-#{$i}'] {
+        width: percentage( $i / $cell-count);
+      }
+    }
+  }
+}
+
+// auto cells and...
+[data-cell*='xs-auto'],
+[data-cell='auto'] {
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-cell*='#{$slug}-auto'] {
+        flex: 1 1 0;
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+}
+
+// shrink cells
+[data-cell*='xs-shrink'] {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-cell*='#{$slug}-shrink'] {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+}

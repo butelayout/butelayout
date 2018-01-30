@@ -1,0 +1,17 @@
+// Offset
+@for $i from 1 through $cell-count {
+  [data-offset*='xs-#{$i}'] {
+    margin-left: percentage( $i / $cell-count);
+  }
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-offset*='#{$slug}-#{$i}'] {
+        width: percentage( $i / $cell-count);
+      }
+    }
+  }
+}

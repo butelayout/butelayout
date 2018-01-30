@@ -1,0 +1,87 @@
+[data-grid] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{map-get($gutter, value)};
+  margin-left: -#{map-get($gutter, value)};
+  @media (max-width: map-get($breakpoints, sm)) {
+    margin-right: -#{map-get($gutter, min)};
+    margin-left: -#{map-get($gutter, min)};
+  }
+  @media (min-width: map-get($breakpoints, lg)) {
+    margin-right: -#{map-get($gutter, max)};
+    margin-left: -#{map-get($gutter, max)};
+  }
+}
+
+[data-grid*='noGutters'] {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+[data-grid*='noGutters']>[data-cell] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+[data-grid*='xs-auto']>[data-cell],
+[data-grid='auto']>[data-cell] {
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
+}
+
+[data-grid][data-cell] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// Block grid
+@for $i from 1 through $cell-count {
+  [data-grid*='xs-#{$i}']>[data-cell] {
+    width: percentage( $cell-count / $i / $cell-count);
+  }
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-grid*='#{$slug}-#{$i}']>[data-cell] {
+        width: percentage( $cell-count / $i / $cell-count);
+      }
+    }
+  }
+}
+
+// Flex direction:column
+[data-grid*='xs-columns'],
+[data-grid='columns'] {
+  flex-direction: column;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-grid*='#{$slug}-reverse'] {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+[data-grid*='xs-columns']>[data-cell],
+[data-grid='columns']>[data-cell] {
+  flex-basis: auto;
+}
+
+@each $slug,
+$size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $cell-count {
+      [data-grid*='#{$slug}-reverse']>[data-cell] {
+        flex-basis: auto;
+      }
+    }
+  }
+}
