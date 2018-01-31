@@ -15,7 +15,7 @@ Instead of populating class attribute the following data-attributes are used:
 `data-container`, `data-grid`, `data-cell`, `data-offset`, `data-order`, `data-align`, `data-visibility`
 
 Like this:
-~~~~
+```html
 <div data-container>
   <div data-grid>
     <div data-cell="xs-4 lg-3" data-align="bottom"></div>
@@ -23,7 +23,7 @@ Like this:
     <div data-cell="xs-4 lg-3" data-order="md-first" data-visibility="xs-hide"></div>
   </div>
 </div>
-~~~~
+```
 This way you can keep your code more readable and use class attribute just for styling things.
 
 ## Documentation
