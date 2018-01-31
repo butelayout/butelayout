@@ -1,9 +1,9 @@
 [data-container] {
   width: 100%;
-  padding-right: map-get($breakpoints, value);
-  padding-left: map-get($breakpoints, value);
   margin-right: auto;
   margin-left: auto;
+  padding-right: map-get($gutter, value);
+  padding-left: map-get($gutter, value);
   max-width: $max-width;
   @media (max-width: map-get($breakpoints, sm)) {
     padding-right: map-get($gutter, min);
