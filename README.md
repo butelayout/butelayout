@@ -31,9 +31,13 @@ This way you can keep your code more readable and use class attribute just for s
 For full documentation, visit [butelayout.github.io](https://butelayout.github.io/).
 
 ## Install
-
+NPM installation
 ```sh
 npm install butelayout
+```  
+Quick installation (CDN)
+```html
+ <link href="https://cdn.jsdelivr.net/npm/butelayout/dist/butelayout.css" rel="stylesheet">
 ```
 
 Or download/clone the repo.
