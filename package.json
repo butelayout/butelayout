@@ -1,6 +1,6 @@
 {
   "name": "butelayout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Flexbox layout system that keeps structure away from styles",
   "main": "dist/butelayout.css",
   "scripts": {
