@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/butelayout/butelayout#readme",
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^4.0.0-rc.2",
     "gulp": "^4.0.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.1.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

@@ -7,7 +7,9 @@ gulp.task('css', function () {
     return {
       plugins: [
         require('css-mqpacker'),
-        require('cssnano')]
+        require('autoprefixer'),
+        require('cssnano')
+      ]
     };
   }
   return gulp
